@@ -1,0 +1,60 @@
+#Commonbutton {
+    background-color: transparent;
+    color: #6360FF; /* You can replace this with your primary color */
+    border: 2px solid #6360FF;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #Commonbutton:hover {
+    background-color: #6360FF;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  }
+  
+  #Commonbutton:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+  }
+
+  .button-group{
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 30px;
+}
+
+.viewuserbyfield:hover{
+  color: #6360FF;
+  cursor: pointer;
+}
+
+.EditCancelButton{
+      background: #5B6571;
+        padding: 4px 12px;
+    border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+}
+.EditSaveButton{
+   background: #6360FF;
+      padding: 4px 12px;
+    border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+}
+#CancelButton{
+      background-color:#5B6571;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}

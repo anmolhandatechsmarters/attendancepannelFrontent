@@ -1,0 +1,157 @@
+/* common.css */
+
+/* Base Theme Variables (Light Mode) */
+:root {
+  --background-color: #f9fafb;
+  --form-background: #ffffff;
+  --border-color: #e5e7eb;
+  --input-background: #ffffff;
+  --input-focus-border: #5856d6;
+  --input-focus-shadow: rgba(88, 86, 214, 0.2);
+  --button-background: #6360FF;
+  --button-hover: #6360FF;
+  --text-color: #1f2937;
+  --label-color: #4b5563;
+  --hover-shadow: rgba(0, 0, 0, 0.1);
+
+  --border-radius: 12px;
+  --transition-speed: 0.3s ease;
+  --font-size: 16px;
+  --padding: 12px 16px;
+  --max-width: 600px;
+}
+
+/* Dark Theme Overrides */
+body.dark {
+  --background-color: #1d222b;
+  --form-background: #323a49;
+  --border-color: #444950;
+  --input-background: #2c353d;
+  --input-focus-border: #6360FF;
+  --input-focus-shadow: rgba(254, 119, 67, 0.3);
+  --button-background: #6360FF;
+  --button-hover: #6360FF;
+  --text-color: #f3f4f6;
+  --label-color: #cbd5e1;
+  --hover-shadow: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Form Container */
+#AddDepartementDesignation .container {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Form */
+#AddDepartementDesignation  form {
+  background-color: var(--form-background);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition-speed);
+}
+
+/* Form Group */
+#AddDepartementDesignation  .form-group {
+  margin-bottom: 20px;
+}
+
+/* Label */
+#AddDepartementDesignation  label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--label-color);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Input & Select */
+#AddDepartementDesignation  input,
+#AddDepartementDesignation  select {
+  width: 100%;
+  padding: var(--padding);
+  font-size: var(--font-size);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--input-background);
+  color: var(--text-color);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+  box-sizing: border-box;
+}
+
+#AddDepartementDesignation  input:focus,
+ #AddDepartementDesignation  select:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-shadow);
+  outline: none;
+}
+#AddDepartementDesignation  .buttonCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  #AddDepartementDesignation  .container,
+  #AddDepartementDesignation  form {
+    padding: 16px;
+  }
+
+  #AddDepartementDesignation  input,
+  #AddDepartementDesignation select {
+    font-size: 15px; 
+    padding: 10px 14px;
+  }
+
+  #AddDepartementDesignation  button {
+    width: 100%;
+  }
+}
+
+/* Smooth animations for focus states */
+@keyframes focusAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+#AddDepartementDesignation  input:focus,
+#AddDepartementDesignation  select:focus {
+  animation: focusAnimation 0.2s forwards;
+}
+
+/* Adding smooth hover effects */
+#AddDepartementDesignation  form .form-group input:hover,
+#AddDepartementDesignation  form .form-group select:hover {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 5px var(--input-focus-shadow);
+  
+}
+
+/* Button Hover Shadow */
+#AddDepartementDesignation  button:hover {
+  box-shadow: 0 4px 12px var(--hover-shadow);
+}
+
+
+
+
+.SaveButton{
+  background-color: #6360FF;
+  border: none;
+}
+
+.CancelButton{
+  background-color: silver;
+    border: none;
+}

@@ -1,0 +1,275 @@
+:root {
+    --bg: #fff;
+    --text: #333;
+    --header-bg: #f8f9fa;
+    --active: #28a745;
+    --inactive: #ffc107;
+    --footer-bg: #fafafa;
+  }
+  
+  body.dark {
+    --bg: #1d2226;
+    --text: #f5f5f5;
+    --header-bg: #2a2f35;
+    --footer-bg: #2c343e;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Table Container */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--bg);
+  }
+  
+  /* Table Styling */
+  .modern-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+ 
+  }
+  
+  .modern-table thead {
+    background-color: var(--header-bg);
+    position: sticky;
+    top: 0;
+  }
+  
+  .modern-table th {
+    padding: 10px 8px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+  
+  .modern-table td {
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+    word-break: break-word;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .modern-table tbody{
+    margin-top: 20px;
+  }
+  /* Row Hover Animation */
+  .modern-table tbody tr {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform, box-shadow;
+  }
+  
+  .modern-table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: translateY(-3px) scale(1.01);
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); */
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Status Tags */
+  .status {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 4px;
+  }
+  
+  .status.active {
+    background-color: var(--active);
+    color: #fff;
+  }
+  
+  .status.inactive {
+    background-color: var(--inactive);
+    color: #000;
+  }
+  
+  /* Footer Styling */
+  .table-footer {
+    display: flex;
+    justify-content: center;
+    background: var(--footer-bg);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-btn {
+    background-color: #6360FF;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .footer-btn:hover {
+    background-color: #6360FF;
+    transform: translateY(-1px);
+  }
+  
+  .footer-btn:active {
+    transform: scale(0.97);
+  }
+  
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pagination select,
+  .pagination button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    min-width: 60px;
+  }
+  .pagination-label,
+.pagination-info {
+  font-size: 0.85rem;
+}
+.paginationButton{
+    background-color: #6360FF;
+    color:white;
+}
+
+
+  /* Responsive: Below 900px */
+  @media (max-width: 900px) {
+    .modern-table {
+      font-size: 0.85rem;
+    }
+  
+    .modern-table th,
+    .modern-table td {
+      padding: 8px 10px;
+    }
+  }
+  
+  /* Mobile Cards: Below 500px */
+  @media (max-width: 500px) {
+    .modern-table {
+      display: none;
+    }
+  
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      will-change: transform, box-shadow;
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+  
+    .card:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .card-header {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .card-content {
+      margin-bottom: 10px;
+    }
+  
+    .card-footer {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+  
+    .footer-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .pagination {
+        gap: 6px;
+      }
+    
+      .pagination select,
+      .pagination button {
+        width: 100%;
+      }
+    
+      .pagination-label,
+      .pagination-info {
+        width: 100%;
+        text-align: center;
+      }
+  }
+  
+  .actionButton{
+    white-space: nowrap;
+
+  }
+  .actiionButtonContainer{
+    display: flex;
+  gap: 10px;
+  }
+
+
+  /* ------------- */
+  .tableDeleteBackground{
+  border:1px solid red;
+  padding: 1px;
+  font-size: 18px;
+}
+
+.tableEditBackground{
+    border:1px solid blue;
+  padding: 1px;
+  font-size: 18px;
+}
+
+.button-log-delete-button{
+  background-color: red;
+ 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+}

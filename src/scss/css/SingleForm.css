@@ -1,0 +1,179 @@
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --border-color: #ddd;
+  --button-background: #6360FF;
+  --button-hover: #4a48d9;
+  --input-background: #ffffff;
+  --select-background: #ffffff;
+  --step-inactive: #ccc;
+  --step-active: #6360FF;
+}
+
+body.dark {
+  --background-color: #1d222b;
+  --text-color: #ffffff;
+  --border-color: transparent;
+  --button-background: #6360FF;
+  --button-hover: #4a48d9;
+  --input-background: #2c2f36;
+  --select-background: #2c2f36;
+  --step-inactive: #555;
+  --step-active: #6360FF;
+}
+
+.SingleForm {
+  margin: 2rem auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.SingleForm h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.SingleForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.SingleForm .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.SingleForm label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.SingleForm input[type="text"],
+.SingleForm input[type="time"],
+.SingleForm input[type="date"],
+.SingleForm input[type="file"],
+.SingleForm input[type="number"],
+.SingleForm textarea,
+.SingleForm select {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+    padding: 10px;
+
+}
+
+.SingleForm textarea {
+  resize: vertical;
+}
+
+/* Dropdown list for user search */
+.SingleForm ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.25rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-background);
+  border-radius: 6px;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.SingleForm li {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.SingleForm li:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+}
+
+/* Selected user display */
+.SingleForm .selected-user {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Button group */
+.SingleForm .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.SingleForm button {
+  background-color: var(--button-background);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.SingleForm button:hover {
+  background-color: var(--button-hover);
+}
+
+.SingleForm button[type="button"] {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.SingleForm button[type="button"]:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+  border-color: var(--button-hover);
+}
+
+/* Responsive handling */
+@media (max-width: 480px) {
+  .SingleForm {
+    padding: 1rem;
+  }
+
+  .SingleForm .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .SingleForm button {
+    width: 100%;
+  }
+}
+
+
+.input-field.dark-theme {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.input-field.light-theme {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.button-group{
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 30px;
+}

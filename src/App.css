@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+  --background-color: #ffffff;
+  --text-color: black;
+  --border-color: #ccc;
+  --form-bg: white;
+  --button-bg: #5856d6;
+  --button-hover-bg: #3c75e0;
+  --border: 1px solid black;
+  --box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --background-color: #1d2226;
+  --text-color: #ffffff;
+  --border-color: #444;
+  --form-bg: #2c2f36;
+  --button-bg: #5856d6;
+  --button-hover-bg: #3c75e0;
+  --border: none;
+  --box-shadow: none;
+}
+
+
+.EditDeleteBackground{
+  background-color: white;
+  border-radius: 50%;
+  width: 200px;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove the spinner in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+*{
+  text-transform: capitalize !important;
+  font-family: "Poppins", sans-serif !important;
+  font-optical-sizing: auto !important;
+}
+
+
+.sidebar-nav .nav-group .nav-group-items{
+  margin-left: 30px !important;
+}
+
+
+/* ---------------------new css -------------------------- */

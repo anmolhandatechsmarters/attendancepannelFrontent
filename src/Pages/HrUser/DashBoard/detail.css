@@ -1,0 +1,164 @@
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --border-color: #ddd;
+  --button-background: #5856d6;
+  --button-hover: #3c75e0;
+  --badge-success: #28a745;
+  --badge-danger: #dc3545;
+  --badge-warning: #ffc107;
+  --badge-secondary: #6c757d;
+}
+
+body.dark {
+  --background-color: #1d222b;
+  --text-color: #ffffff;
+  --border-color: transparent;
+}
+
+.employee-Main-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; 
+  background-color: var(--background-color);
+}
+
+.badge {
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  color: white; 
+  font-weight: bold;
+}
+
+.badge-success {
+  background-color: var(--badge-success);
+}
+
+.badge-danger {
+  background-color: var(--badge-danger); 
+}
+
+.badge-warning {
+  background-color: var(--badge-warning); 
+}
+
+.badge-secondary {
+  background-color: var(--badge-secondary); 
+}
+
+.employeeImage {
+  text-align: center;
+  position: relative; 
+}
+
+.employeeImage img {
+  width: 20em; 
+  height: 20em; 
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employeeImage p {
+  margin-top: 10px;
+  font-size: 1.5rem; 
+  color: var(--text-color);
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  font-size: 1.5rem; 
+  cursor: pointer;
+  color: #007bff; 
+}
+
+.employeedetail {
+  width: 100%;
+  max-width: 350px; 
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin-left: 20px; 
+  margin-top: 20px; 
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between; 
+  margin: 10px 0;
+}
+
+.detail-title {
+  font-weight: bold; 
+  width: 150px; 
+  color: var(--text-color);
+}
+
+.detail-value {
+  flex-grow: 1; 
+  text-align: right;
+  color: var(--text-color);
+}
+
+.employeedetail p {
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.employeedetail button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-background);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.employeedetail button:hover {
+  background-color: var(--button-hover);
+}
+
+@media (max-width: 768px) {
+  .employee-Main-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+  }
+
+  .employeeImage img {
+    width: 15em;
+    height: 15em;
+  }
+
+  .employeedetail {
+    width: 90%;
+    max-width: none;
+    margin-top: 20px; 
+    margin-left: 0; 
+  }
+}
+
+@media (max-width: 480px) {
+  .employeeImage img {
+    width: 12em;
+    height: 12em;
+  }
+
+  .employeedetail {
+    width: 95%;
+  }
+}
+

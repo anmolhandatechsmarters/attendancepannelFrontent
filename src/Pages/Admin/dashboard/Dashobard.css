@@ -1,0 +1,99 @@
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #ddd;
+  --card-background: #fff;
+  --card-hover-color: #007bff;
+  --label-color: #555;
+  --hover-text-color: #000000;
+}
+
+body.dark {
+  --background-color: #1d2226;
+  --text-color: #ffffff;
+  --border-color: transparent;
+  --card-background: #2c343e;
+  --card-hover-color: #007bff;
+  --label-color: #ccc;
+  --hover-text-color: #ffffff;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text-color);
+  justify-content: center;
+}
+
+.dashboard-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  min-width: 200px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+}
+
+.dashboard-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dashboard-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dashboard-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.dashboard-user-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.dashboard-label {
+  font-size: 0.9rem;
+  color: var(--label-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-user-number {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-label {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-card {
+    max-width: 100%;
+  }
+
+  .dashboard-info {
+    padding-left: 0.5rem;
+  }
+}

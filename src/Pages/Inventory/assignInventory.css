@@ -1,0 +1,70 @@
+/* AssignInventory.css */
+
+.AssignInventoryMaindiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.FirstDiv,
+.SecondDiv {
+  flex: 1 1 100%;
+  background-color: var(--bg);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.FirstDiv select,
+.SecondDiv select {
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.selected-cards-display {
+  margin-top: 1rem;
+}
+
+button.submit-btn {
+  background-color: #5856d6;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .FirstDiv,
+  .SecondDiv {
+    flex: 1 1 48%;
+  }
+}

@@ -1,0 +1,199 @@
+/* Base styles */
+.login-container {
+  display: flex;
+  max-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background:var(--background-color);
+}
+
+
+.brand-side {
+  flex: 0.7;
+  background:var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.brand-side .logo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+/* Right side - form */
+.form-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+}
+
+.login-btn {
+  width: 100%;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #574fd2;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.recovery-link {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.social-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.divider {
+  margin-bottom: 0.75rem;
+}
+
+.social-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.social-btn img {
+  width: 20px;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+.MobileLabel{
+  display: none;
+}
+.signup-text a {
+  color: #fe7743;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .MobileLabel{
+    display: block;
+    text-align: center;
+  }
+  .RemoveMobile{
+    display: none;
+  }
+  .brand-side{
+    display: none;
+  }
+
+  .brand-side {
+    order: 2;
+    padding: 1.5rem;
+  }
+
+  .form-side {
+    order: 1;
+    padding: 1.5rem;
+  }
+
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-options {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .login-btn {
+    padding: 0.65rem;
+  }
+
+  input[type='email'],
+  input[type='password'] {
+    padding: 0.65rem;
+  }
+}
+
+.rive-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.rive-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rive-inner {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+

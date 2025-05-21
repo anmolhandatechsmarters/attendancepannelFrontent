@@ -1,0 +1,202 @@
+/* AddUserForm.css */
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --border-color: #ddd;
+  --button-background: #6360FF;
+  --button-hover: #6360FF;
+  --input-background: #ffffff;
+  --select-background: #ffffff;
+  --step-inactive: #ccc;
+  --step-active: #6360FF;
+}
+
+body.dark {
+  --background-color: #1d222b;
+  --text-color: #ffffff;
+  --border-color: transparent;
+  --button-background: #6360FF;
+  --button-hover: #6360FF;
+  --input-background: #2c2f36;
+  --select-background: #2c2f36;
+  --step-inactive: #555;
+  --step-active: #6360FF;
+}
+
+/* ===== FORM CONTAINER ===== */
+.form-wrapper {
+  width: 100%;
+  margin: auto;
+    margin-bottom: 50px;
+  background: var(--background-color);
+  color: var(--text-color);
+  border-radius: 12px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.form-title {
+  text-align: center !important;
+  margin-bottom: 30px;
+  color: var(--button-background);
+}
+
+/* ===== STEP INDICATOR ===== */
+.step-progress {
+  position: relative;
+  margin: 20px 0 40px;
+  padding: 0 10px;
+}
+
+.step-bar {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--step-inactive);
+  z-index: 1;
+}
+
+.step-items {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--step-inactive);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.step-circle.active {
+  background-color: var(--step-active);
+}
+
+.step-label {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.step-connector {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: var(--step-inactive);
+  z-index: -99;
+  transition: background-color 0.3s;
+}
+
+.step-connector.active {
+  background-color: var(--step-active);
+}
+
+/* ===== FORM FIELDS ===== */
+.user-form h2{
+  text-align: center;
+}
+.user-form .row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.user-form .col {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.user-form input,
+.user-form select {
+  padding: 10px 14px;
+  background-color: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  color: var(--text-color);
+  transition: border-color 0.3s ease-in-out, background-color 0.3s;
+}
+
+.user-form input:focus,
+.user-form select:focus {
+  border-color: var(--button-background);
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+/* ===== BUTTONS ===== */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  background-color: var(--button-background);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button-container button:hover {
+  background-color: var(--button-hover);
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .user-form .row {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+}
+
+
+
+

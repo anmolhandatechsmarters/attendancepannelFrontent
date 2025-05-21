@@ -1,0 +1,75 @@
+/* Search Bar And there Button css */
+.upperdiv{
+    margin-top: 1.5rem;
+    padding: 10px 30px;
+  }
+  
+  .action-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-end;
+      
+    }
+
+
+    .toggle-control {
+      cursor: pointer;
+    }
+    
+    .role-select {
+      max-width: 150px;
+    }
+    
+    .nowrap {
+      white-space: nowrap;
+    }
+    
+  
+    @media (max-width: 768px) {
+      .action-controls {
+        justify-content: flex-start;
+      }
+    
+      .action-controls > * {
+        flex: 1 1 auto;
+        min-width: 130px;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .action-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    
+      .action-controls > * {
+        width: 100%;
+      }
+  }
+  
+  .transitionEffectOccur{
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  /* ----------------------------------------------------------------- */
+  .form-control{
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    border-radius: var(--cui-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.actionButton{
+  gap:1rem
+}

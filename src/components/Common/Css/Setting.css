@@ -1,0 +1,130 @@
+/* theme variables */
+:root {
+  --bg-page:        #f0f2f5;
+  --bg-panel:       #ffffff;
+  --text-primary:   #333333;
+  --text-secondary: #555555;
+  --border-color:   #cccccc;
+  --toggle-off:     #dddddd;
+  --toggle-on:      #6360FF;
+  --shadow:         rgba(0, 0, 0, 0.1);
+}
+.dark-theme {
+  --bg-page:        #1e1e1e;
+  --bg-panel:       #1d2226;
+  --text-primary:   #eeeeee;
+  --text-secondary: #cccccc;
+  --border-color:   #444444;
+  --toggle-off:     #555555;
+  --toggle-on:      #6360FF;
+  --shadow:         rgba(0, 0, 0, 0.5);
+}
+
+/* page background */
+.dark-theme .setting,
+.light-theme .setting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: background-color 0.4s ease;
+}
+
+/* panel */
+.setting-container {
+  background:     var(--bg-panel);
+  color:          var(--text-primary);
+  border-radius:  12px;
+  box-shadow:     0 8px 24px var(--shadow);
+  width:          100%;
+  max-width:      400px;
+  padding:        2rem;
+  transform:      translateY(20px);
+  opacity:        0;
+  animation:      fadeInUp 0.6s ease forwards;
+}
+
+/* header */
+.setting-container h1 {
+  font-size:   1.8rem;
+  margin-bottom: 1.5rem;
+  text-align:  center;
+}
+
+/* each setting row */
+.setting-item {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   1.5rem;
+  font-size:       1rem;
+  color:           var(--text-secondary);
+}
+
+/* toggle switch */
+.switch {
+  position: relative;
+  width:    50px;
+  height:   28px;
+}
+.switch input {
+  opacity: 0;
+  width:   0;
+  height:  0;
+}
+.slider {
+  position:    absolute;
+  cursor:      pointer;
+  top:         0;
+  left:        0;
+  right:       0;
+  bottom:      0;
+  background:  var(--toggle-off);
+  border-radius: 28px;
+  transition:  background 0.3s ease;
+}
+.slider.round::before {
+  border-radius: 50%;
+}
+.slider::before {
+  content:     "";
+  position:    absolute;
+  height:      22px;
+  width:       22px;
+  left:        3px;
+  top:         3px;
+  background:  var(--bg-panel);
+  transition:  transform 0.3s ease;
+}
+.switch input:checked + .slider {
+  background: var(--toggle-on);
+}
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* responsive */
+@media (max-width: 480px) {
+  .setting-container {
+    padding: 1.5rem;
+  }
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .setting-item span {
+    margin-bottom: 0.5rem;
+  }
+}

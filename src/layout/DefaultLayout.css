@@ -1,0 +1,24 @@
+.ReturnToAdminButtonContainer {
+    position: fixed; /* Keeps the button fixed on the screen */
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right side of the screen */
+    z-index: 1000; /* Ensures it stays above other elements */
+  }
+  
+  .ReturnToAdminButton {
+    background-color: #5856d6; /* Button background color */
+    color: white;
+    height: 100px;
+    width: 100px; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer;
+    border-radius: 50%; /* Pointer cursor on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for effect */
+  }
+  
+  .ReturnToAdminButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  

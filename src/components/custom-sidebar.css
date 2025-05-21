@@ -1,0 +1,11 @@
+/* custom-sidebar.css */
+.nav-group-subitem {
+    margin-left: 30px;
+  }
+  
+  .nav-group-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
