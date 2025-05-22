@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'; 
-import './Css/unauthorized.css'; 
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UnauthorizedPage = () => {
   const navigate = useNavigate();
@@ -9,10 +8,10 @@ const UnauthorizedPage = () => {
   useEffect(() => {
     const removelocalsystem = async () => {
       await Swal.fire({
-        title: 'Unauthorized Access',
-        text: 'You have been logged out due to unauthorized access.',
-        icon: 'warning',
-        confirmButtonText: 'Okay'
+        title: "Unauthorized Access",
+        text: "You have been logged out due to unauthorized access.",
+        icon: "warning",
+        confirmButtonText: "Okay",
       });
 
       localStorage.removeItem("token");
@@ -24,10 +23,7 @@ const UnauthorizedPage = () => {
     removelocalsystem();
   }, [navigate]);
 
-  return (
-    <>
-    </>
-  );
+  return <></>;
 };
 
 export default UnauthorizedPage;
