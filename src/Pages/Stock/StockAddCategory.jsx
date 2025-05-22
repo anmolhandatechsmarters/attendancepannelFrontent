@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import getSwalTheme from '../../utils/Swaltheme';
-import "./Css/AddStockCategory.css"
 import { useNavigate } from "react-router-dom";
 import axiosInstance from '../../components/utils/AxiosIntance';
-import Spinner from '../../views/notifications/ForgetPasswordlogin/Spinner';
-
+import Spinner from '../../utils/Spinner';
+import { useSelector } from 'react-redux';
+import {motion} from "framer-motion"
+import "../../scss/css/ADDDepartment&Designation.css"
 const DepartmentAdd = () => {
   const [loading, setLoading] = useState(false);
+    const theme = useSelector((state) => state.theme);
   const role=localStorage.getItem("role")
   const [newCategory, setNewCategory] = useState(''); 
   const [message, setMessage] = useState(''); 
@@ -74,23 +76,43 @@ const logip = useSelector((state) => state.ipAddress);
   }
 
   return (
-    <div className="departmentadd-admin">
-      <div className="form-container">
-        <form onSubmit={handleAddCategory} className="department-form">
+    <div
+      id="AddDepartementDesignation"
+      className={theme === "dark" ? "dark-theme" : "light-theme"}
+    >
+      <motion.div
+        className="container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <form onSubmit={handleAddCategory}>
           <div className="form-group">
-            <label htmlFor="categoryName">Add New Category</label>
-            <input
+            <label htmlFor="departmentName">Add New Category</label>
+            <motion.input
               id="categoryName"
               type="text"
               placeholder="Enter Category Name"
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value)}
               required
+              className="form-input"
+              whileFocus={{ scale: 1.02 }}
             />
           </div>
-          <button type="submit" className="add-button">Add</button>
+          <div className="buttonCenter">
+            <motion.button
+              type="submit"
+              className="add-button"
+              id="Commonbutton"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Add Category
+            </motion.button>
+          </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };

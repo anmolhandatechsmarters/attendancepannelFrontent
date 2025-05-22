@@ -24,7 +24,7 @@ const AdminCategoryTable = React.lazy(
 const AdminAddInventory = React.lazy(
   () => import("../Pages/Inventory/AddInventory")
 );
-const GroceryCategory = React.lazy(() => import("../Pages/Stock/GroceryList"));
+const GroceryList = React.lazy(() => import("../Pages/Stock/GroceryList"));
 
 const AdminStockCategory = React.lazy(
   () => import("../Pages/Stock/StockCategory")
@@ -91,7 +91,7 @@ const EditGroceryInventory = React.lazy(
 );
 
 const AdminAddCategoryData = React.lazy(
-  () => import("../Pages/Inventory/Category/AddCategory")
+  () => import("../Pages/Stock/StockAddCategory")
 );
 
 const AdminSetting = React.lazy(() => import("../components/Common/Setting"));
@@ -166,7 +166,7 @@ const routes = [
     name: "Edit Inventory",
     element: EditInventory,
   },
-  { path: "/grocery_category", name: "Stock List", element: GroceryCategory },
+  { path: "/grocery_category", name: "Stock List", element: GroceryList },
   {
     path: "/addgrocerycategory",
     name: "Add Stock Inventory",
