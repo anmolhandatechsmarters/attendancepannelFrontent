@@ -65,7 +65,7 @@ const Setting = () => {
   return (
     <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
       <div className="setting">
-        <div className="setting-container">
+        <div className="setting-container" >
           <h1>Settings</h1>
           {Role !== "Employee" && (
             <div className="setting-item">

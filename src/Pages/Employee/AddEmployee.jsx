@@ -411,8 +411,9 @@ const Register = () => {
     }
   };
   useEffect(() => {
+    const theme = localStorage.getItem("paneltheme") || "light";
     document.body.classList.toggle("dark", theme === "dark");
-  }, [theme]);
+  }, []);
 
   return (
     <>

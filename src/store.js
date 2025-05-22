@@ -1,9 +1,11 @@
+// store.js or your redux store file
 import { legacy_createStore as createStore } from "redux";
+const savedTheme = localStorage.getItem("paneltheme") || "light";
 
 const initialState = {
   sidebarShow: true,
-  theme: "light",
-  ipAddress: null, // Add property for IP address
+  theme: savedTheme,
+  ipAddress: null,
 };
 
 const changeState = (state = initialState, { type, ...rest }) => {
@@ -18,4 +20,5 @@ const changeState = (state = initialState, { type, ...rest }) => {
 };
 
 const store = createStore(changeState);
+
 export default store;

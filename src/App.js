@@ -20,23 +20,21 @@ const Page500 = React.lazy(() => import("./views/pages/page500/Page500"));
 const EmployeeLayout = React.lazy(() => import("./layout/Employeelayout"));
 
 const App = () => {
-  const dispatch = useDispatch();
-  const { isColorModeSet, setColorMode } = useColorModes(
-    "paneltheme"
-  );
+  const theme = useSelector((state) => state.theme);
+  const { isColorModeSet, setColorMode } = useColorModes("paneltheme");
   const storedTheme = useSelector((state) => state.theme);
-  const [fcmToken,setfcmToken]=useState(null)
+  const [fcmToken, setfcmToken] = useState(null);
 
   // RequestFCMToken().then(token => console.log("FCM Token:", token));
 
-  useEffect(()=>{
-    const fectchFcMtoken=async()=>{
-      const fcmtoken=await RequestFCMToken();
-      setfcmToken(fcmtoken)
+  useEffect(() => {
+    const fectchFcMtoken = async () => {
+      const fcmtoken = await RequestFCMToken();
+      setfcmToken(fcmtoken);
       // console.log(fcmToken)
-    }
+    };
     fectchFcMtoken();
-  })
+  });
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -49,24 +47,31 @@ const App = () => {
     }
   }, [isColorModeSet, setColorMode, storedTheme]);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    const theme =
-      localStorage.getItem("paneltheme") || "light";
-    document.body.classList.toggle("dark", theme === "dark");
-  }, []);
+    const savedTheme = localStorage.getItem("paneltheme") || "light";
+    dispatch({ type: "set", theme: savedTheme });
+  }, [dispatch]);
 
   useEffect(() => {
     fetchAndSetIp(); // Fetch IP only once when app loads
   }, []);
 
+
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
   return (
     <BrowserRouter>
       <Suspense
-        // fallback={
-        //   <div className="pt-3 text-center">
-        //     <CSpinner color="primary" variant="grow" />
-        //   </div>
-        // }
+      // fallback={
+      //   <div className="pt-3 text-center">
+      //     <CSpinner color="primary" variant="grow" />
+      //   </div>
+      // }
       >
         <Routes>
           <Route path="*" name="default" element={<DefaultLayout />} />
