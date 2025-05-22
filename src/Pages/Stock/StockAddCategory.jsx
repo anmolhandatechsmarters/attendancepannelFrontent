@@ -20,10 +20,6 @@ const logip = useSelector((state) => state.ipAddress);
 
 
 
-  useEffect(() => {
-    const theme = localStorage.getItem('coreui-free-react-admin-template-theme') || 'light';
-    document.body.classList.toggle('dark', theme === 'dark');
-  }, []);
 
 
   const handleAddCategory = async (e) => {
@@ -86,7 +82,7 @@ const logip = useSelector((state) => state.ipAddress);
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <form onSubmit={handleAddCategory}>
+        <form onSubmit={handleAddCategory} className={theme === "dark" ? "dark-theme" : "light-theme"}>
           <div className="form-group">
             <label htmlFor="departmentName">Add New Category</label>
             <motion.input
