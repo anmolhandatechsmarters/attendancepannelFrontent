@@ -285,17 +285,14 @@ const Register = () => {
       date_of_joining,
     } = formData;
 
-    if (date_of_joining) {
-      const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-      if (!panRegex.test(pancard)) {
-        Swal.fire({
-          icon: "error",
-          title: "Required Field",
-          text: "Please Fill the Date of Joining",
-          confirmButtonText: "OK",
-        });
-        return;
-      }
+    if (!date_of_joining) {
+      Swal.fire({
+        icon: "error",
+        title: "Required Field",
+        text: "Please Fill the Date of Joining",
+        confirmButtonText: "OK",
+      });
+      return;
     }
     if (pancard) {
       const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
@@ -517,8 +514,10 @@ const Register = () => {
                     />
                   </div>
                   <div className="col">
-                    <label>Date Of Joining</label>
-                    <sup className="required">*</sup>
+                    <label>
+                      Date Of Joining <sup className="required">*</sup>
+                    </label>
+
                     <input
                       type="Date"
                       name="date_of_joining"
@@ -637,10 +636,7 @@ const Register = () => {
                       </div>
                     </div>
                     <div className="col">
-                      <label>
-                        Personal Email
-                        <sup style={{ color: "red", marginLeft: "5px" }}>*</sup>
-                      </label>
+                      <label>Personal Email</label>
                       <input
                         type="email"
                         name="personal_email"

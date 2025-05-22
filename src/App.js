@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { CSpinner, useColorModes } from "@coreui/react";
 import "./scss/style.scss";
 import { useDispatch } from "react-redux";
-import Admin from "./Mytemppage/Admin";
+import Admin from "./layout/Admin";
 import PrivateRoute from "./privatePages/Privaterouting";
 import UnauthorizedPage from "./privatePages/Unauthorized";
 import Forgetpassword from "./views/pages/ForgetPasswordlogin/Forgetpassword";
