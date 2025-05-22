@@ -7,20 +7,18 @@ import axiosInstance from "../../components/utils/AxiosIntance";
 import { useDropzone } from "react-dropzone";
 import { useNavigate } from "react-router-dom";
 
-
 import { useSelector } from "react-redux";
 import "../../scss/css/MultiForm.css";
-import "../../scss/css/button.css"
+import "../../scss/css/button.css";
 const Register = () => {
   const theme = useSelector((state) => state.theme);
   const Swal = getSwalTheme();
-  
+
   const roles = localStorage.getItem("role");
   const defaultcountry = "101";
 
-
   const logid = localStorage.getItem("id");
-const logip = useSelector((state) => state.ipAddress);
+  const logip = useSelector((state) => state.ipAddress);
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   const [getip, setgetip] = useState("");
@@ -107,8 +105,6 @@ const logip = useSelector((state) => state.ipAddress);
   });
 
   useEffect(() => {
-   
-
     const fetchdepartment = async () => {
       try {
         const result = await axiosInstance.get(`/admin/getadmindepartment`, {});
@@ -143,7 +139,6 @@ const logip = useSelector((state) => state.ipAddress);
     fetchdesignaiton();
     fetchCountryCode();
     FetchCountryCodeById(formData.country);
-   
   }, []);
 
   const FetchCountryCodeById = async (id) => {
@@ -281,12 +276,27 @@ const logip = useSelector((state) => state.ipAddress);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const {
+      pancard,
+      aadharcard,
+      bankaccount,
+      confirmaccount,
+      ifsccode,
+      date_of_joining,
+    } = formData;
 
-
-    const { pancard, aadharcard, bankaccount, confirmaccount, ifsccode } =
-      formData;
-
-
+    if (date_of_joining) {
+      const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+      if (!panRegex.test(pancard)) {
+        Swal.fire({
+          icon: "error",
+          title: "Required Field",
+          text: "Please Fill the Date of Joining",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    }
     if (pancard) {
       const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
       if (!panRegex.test(pancard)) {
@@ -300,7 +310,6 @@ const logip = useSelector((state) => state.ipAddress);
       }
     }
 
-   
     if (aadharcard) {
       const adhaarRegex = /^\d{12}$/;
       if (!adhaarRegex.test(aadharcard)) {
@@ -313,7 +322,6 @@ const logip = useSelector((state) => state.ipAddress);
         return;
       }
     }
-
 
     if (bankaccount) {
       const bankAccountRegex = /^\d+$/;
@@ -338,7 +346,6 @@ const logip = useSelector((state) => state.ipAddress);
       return;
     }
 
-   
     if (ifsccode) {
       if (!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsccode)) {
         Swal.fire({
@@ -511,6 +518,7 @@ const logip = useSelector((state) => state.ipAddress);
                   </div>
                   <div className="col">
                     <label>Date Of Joining</label>
+                    <sup className="required">*</sup>
                     <input
                       type="Date"
                       name="date_of_joining"
@@ -956,13 +964,14 @@ const logip = useSelector((state) => state.ipAddress);
                   Next
                 </button>
               ) : (
-                <button type="submit" id="Commonbutton">Add User</button>
+                <button type="submit" id="Commonbutton">
+                  Add User
+                </button>
               )}
             </div>
           </form>
         </div>
       </div>
-
     </>
   );
 };
