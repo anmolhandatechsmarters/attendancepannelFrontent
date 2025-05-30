@@ -24,7 +24,7 @@ const [returnlogin, setreturnLogin] = useState(false);
 
 
     const routes = [
-    "/edituser/:id",
+    "/editemployee/:id",
     "/viewuser/:id",
     "/editprofile/:id",
     "/attendance/:id",
@@ -36,8 +36,8 @@ const [returnlogin, setreturnLogin] = useState(false);
     "/user/admin",
     "/dashboard",
     "/Confirmforgetpassword",
-    "/adduser",
-    "/alluser",
+    "/addemployee",
+    "/allemployee",
     "/attendance",
     "/graphuser",
     "/adminlog",

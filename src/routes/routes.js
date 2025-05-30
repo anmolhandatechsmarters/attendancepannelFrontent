@@ -100,9 +100,9 @@ const routes = [
   { path: "/viewuser/:id", name: "ViewUser", element: ViewUser },
   { path: "/editmessage/:id", name: "Edit Message", element: EditMessage },
   { path: "/dashboard", name: "Dashboard", element: Dashboard },
-  { path: "/edituser/:id", name: "edituser", element: Edituser, exact: true },
-  { path: "/adduser", name: "AddUser", element: AddUser, exact: true },
-  { path: "/alluser", name: "Employees", element: Employees, exact: true },
+  { path: "/editemployee/:id", name: "edit Emoloyee", element: Edituser, exact: true },
+  { path: "/addemployee", name: "Add Emoloyee", element: AddUser, exact: true },
+  { path: "/allemployee", name: "Employees", element: Employees, exact: true },
   { path: "/attendance", name: "Attendance", element: Attendance },
   { path: "/attendance/:id", name: "Attendance", element: Attendance },
   { path: "/adminlog", name: "Log", element: log },
@@ -188,7 +188,7 @@ const routes = [
     element: AdminAddCategoryData,
   },
 
-  { path: "/adminsetting", name: "Admin Settubg", element: AdminSetting },
+  { path: "/adminsetting", name: "Setting", element: AdminSetting },
 ];
 
 export default routes;

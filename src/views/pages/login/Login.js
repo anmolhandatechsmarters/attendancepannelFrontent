@@ -104,9 +104,9 @@ const Login = () => {
     if (isHandsUp) isHandsUp.value = false;
   };
 
-  const handlePasskey = async () => {
+  const handlePasskey = async (event) => {
     setPassword("");
-
+    event.preventDefault();
     const rpID = window.location.hostname;
     const origin = window.location.origin;
     try {
@@ -200,7 +200,7 @@ const Login = () => {
         {/* Left side - Branding/Image */}
         <div className="brand-side">
           <img src={LOGO} alt="Company Logo" className="logo" />
-          <h1>Smarters Panel</h1>
+          <h1>Smarters AIM Panel</h1>
         </div>
 
         {/* Right side - Login Form */}
@@ -211,10 +211,10 @@ const Login = () => {
                 <RiveComponent className="rive-inner" />
               </div>
             </div>
-            <h2 className="MobileLabel">Smarters Panel</h2>
+            <h2 className="MobileLabel">Smarters AIM Panel</h2>
             <h2 className="RemoveMobile">Welcome Back</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
@@ -262,16 +262,16 @@ const Login = () => {
                 <label onClick={handleOtherWaytoLogin}>
                   Try to another way
                 </label>
-                <a href="#" className="recovery-link">
+                {/* <a href="#" className="recovery-link">
                   Recovery Password
-                </a>
+                </a> */}
               </div>
               {passkeylogin ? (
                 <button onClick={handlePasskey} className="login-btn">
                   Login with Passkey
                 </button>
               ) : (
-                <button type="submit" className="login-btn">
+                <button onClick={handleSubmit} className="login-btn">
                   Login
                 </button>
               )}

@@ -339,7 +339,7 @@ const EditUser = () => {
     // Show confirmation alert before submitting the update
     const { value: confirm } = await Swal.fire({
       title: "Are you sure?",
-      text: "Do you want to update the user details?",
+      text: "Do you want to update the Employee details?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes, update it!",
@@ -371,13 +371,13 @@ const EditUser = () => {
         Swal.fire({
           icon: "success",
           title: "Updated!",
-          text: response.data.message || "User details updated successfully",
+          text: response.data.message || "Employee details updated successfully",
           confirmButtonText: "OK",
         });
 
         setTimeout(() => {
           if (userRole === "Admin") {
-            navigate("/alluser");
+            navigate("/allemployee");
           } else {
             navigate("/hremployeeshow");
           }
@@ -401,7 +401,7 @@ const EditUser = () => {
           Swal.fire({
             icon: "error",
             title: "Failed!",
-            text: "Failed to update user details",
+            text: "Failed to update Employee details",
             confirmButtonText: "Try Again",
           });
         }

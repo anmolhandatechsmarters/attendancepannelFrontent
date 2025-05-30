@@ -93,7 +93,7 @@ const Employees = () => {
   const deleteUser = async (id) => {
     const confirmDeleteUser = await Swal.fire({
       title: "Are you sure?",
-      text: "Are You Sure You want to Delete this User",
+      text: "Are You Sure You want to Delete this Employee",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes, delete it!",
@@ -132,7 +132,7 @@ const Employees = () => {
 
   const userdataedit = (userid) => {
     if (Role === "Admin") {
-      navigate(`/edituser/${userid}`);
+      navigate(`/editemployee/${userid}`);
     } else if (Role === "HR") {
       navigate(`/hredituser/${userid}`);
     }
@@ -153,7 +153,7 @@ const Employees = () => {
 
   const handleadduser = () => {
     if (Role === "Admin") {
-      navigate("/adduser");
+      navigate("/addemployee");
     } else if (Role === "HR") {
       navigate("/hraddemployee");
     }
@@ -266,7 +266,7 @@ const Employees = () => {
                 id="Commonbutton"
                 onClick={handleadduser}
               >
-                Add User
+                Add Employee
               </button>
             </div>
           </div>

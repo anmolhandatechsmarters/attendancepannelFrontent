@@ -105,7 +105,7 @@ const Swal = getSwalTheme()
     e.preventDefault();
     const { value: confirm } = await Swal.fire({
       title: "Are you sure?",
-      text: "Do you want to update the user details?",
+      text: "Do you want to update the Employee details?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes, update it!",
@@ -119,16 +119,16 @@ const Swal = getSwalTheme()
         Swal.fire({
           icon: "success",
           title: "Updated!",
-          text: "User details updated successfully",
+          text: "Employee details updated successfully",
           confirmButtonText: "OK",
         });
         navigate("/dashboard");
       } catch (error) {
-        console.error("Error updating user:", error);
+        console.error("Error updating Employee:", error);
         Swal.fire({
           icon: "error",
           title: "Failed!",
-          text: "Failed to update user details",
+          text: "Failed to update Employee details",
           confirmButtonText: "Try Again",
         });
       }

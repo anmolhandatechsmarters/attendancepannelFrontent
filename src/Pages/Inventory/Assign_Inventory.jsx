@@ -362,13 +362,13 @@ const theme = useSelector((state) => state.theme);
       {/* First Section */}
       <motion.div className="FirstDiv" variants={fadeVariants}>
         <div>
-          <label>Select the User</label>
+          <label>Select the Employee</label>
           <Select
             classNamePrefix="adminaddinvetory-react-select"
             value={selectedUser}
             onChange={handleuser}
             options={UserOptions}
-            placeholder="Select User"
+            placeholder="Select Employee"
             styles={selectStyles}
           />
         </div>

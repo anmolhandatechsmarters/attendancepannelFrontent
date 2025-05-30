@@ -33,7 +33,7 @@ const adminNav = [
   {
     component: CNavItem,
     name: "Employees",
-    to: "/alluser",
+    to: "/allemployee",
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
   {

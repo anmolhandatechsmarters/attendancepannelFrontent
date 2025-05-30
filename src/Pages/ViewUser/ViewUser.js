@@ -126,7 +126,7 @@ function ViewUser() {
 
   const handleEditUser = (userid) => {
     if (Role == "Admin") {
-      navigate(`/edituser/${userid}`);
+      navigate(`/editemployee/${userid}`);
     } else if (Role == "HR") {
       navigate(`/hredituser/${userid}`);
     }
@@ -217,13 +217,13 @@ function ViewUser() {
                 className="btn btn-outline-primary"
                 onClick={handleuserinfo}
               >
-                User Info
+                Employee Info
               </button>
               <button
                 className="btn btn-outline-secondary"
                 onClick={() => handleEditUser(user.id)}
               >
-                Edit User
+                Edit Employee
               </button>
               <button
                 className="btn btn-outline-success"
@@ -257,7 +257,7 @@ function ViewUser() {
           >
             {activeSection === "user" && (
               <div className="user-info">
-                <h2 className="text-center mb-4">User Information</h2>
+                <h2 className="text-center mb-4">Employee Information</h2>
                 <div className="container">
                   {[
                     ["Employee ID", user.emp_id, "First Name", user.first_name],

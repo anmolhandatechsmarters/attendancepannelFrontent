@@ -36,7 +36,7 @@ const routes = [
   //   name: "Leave Notificaiton",
   //   element: LeaveNotification,
   // },
-  { path: "/employeesetting", name: "Admin Settubg", element: AdminSetting },
+  { path: "/employeesetting", name: "Setting", element: AdminSetting },
 ];
 
 export default routes;

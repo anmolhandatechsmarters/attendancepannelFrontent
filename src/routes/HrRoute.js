@@ -127,8 +127,8 @@ const routes = [
   { path: "/hremployeeshow", name: "Employees", element: Hrshowemployee },
 
   { path: "/hraddemployee", name: "Add Employee", element: Hradduser },
-  { path: "/hredituser/:id", name: "Edit User", element: Hredituser },
-  { path: "/viewhruser/:id", name: "View User", element: Hrviewuser },
+  { path: "/hredituser/:id", name: "Edit Emoloyee", element: Hredituser },
+  { path: "/viewhruser/:id", name: "View Employee", element: Hrviewuser },
   { path: "/hrdepartment", name: "Deparatment", element: HrDepartment },
   {
     path: "/hradddepartment",

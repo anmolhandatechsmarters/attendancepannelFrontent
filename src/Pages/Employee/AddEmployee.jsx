@@ -383,7 +383,7 @@ const Register = () => {
 
       setTimeout(() => {
         if (roles === "Admin") {
-          navigate("/alluser");
+          navigate("/allemployee");
         } else {
           navigate("/hremployeeshow");
         }
@@ -419,7 +419,7 @@ const Register = () => {
     <>
       <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
         <div className="form-wrapper">
-          <h1 className="form-title">Add User</h1>
+          <h1 className="form-title">Add Employee</h1>
 
           <div className="step-progress">
             <div className="step-bar" />
@@ -962,7 +962,7 @@ const Register = () => {
                 </button>
               ) : (
                 <button type="submit" id="Commonbutton">
-                  Add User
+                  Add Employee
                 </button>
               )}
             </div>

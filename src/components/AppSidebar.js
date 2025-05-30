@@ -119,7 +119,7 @@ const AppSidebar = () => {
             <img
               src={mainlogo}
               alt="Logo"
-              style={{ width: "80px", height: "63px", objectFit: "contain" }}
+              style={{ width: "70px", height: "63px", objectFit: "contain" }}
             />
           </div>
           {/* <h5
@@ -142,7 +142,7 @@ const AppSidebar = () => {
               fontWeight: "600",
             }}
           >
-            Smarter Panel
+            Smarter AIM  Panel
           </h4>
         </CSidebarBrand>
 
